@@ -16,5 +16,8 @@ spec:
     spec:
       containers:
       - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: "{{ .Values.image.username }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        
+      imagePullSecrets:
+        - name: {{ .Values.image.name }}-pull-secret

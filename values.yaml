@@ -5,8 +5,12 @@
 replicaCount: 1
 
 image:
-  repository: < Enter your image repository >
+  # defult registry server for Docker Hub
+  registry: "https://index.docker.io/v1/"
+  name: kubeact
   tag: latest
+  username: 
+  password: 
   pullPolicy: IfNotPresent
 
-imagePullSecrets: []
+
