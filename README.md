@@ -1,3 +1,5 @@
+<div style="text-align:center"><img  width="250" src="./assets/logo.png" /></div>
+
 # kubeact
 ![Kubeact](https://github.com/itsksaurabh/kubeact/workflows/Kubeact/badge.svg)
 
