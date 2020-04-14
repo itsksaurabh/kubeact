@@ -88,5 +88,5 @@ I welcome pull requests, bug fixes and issue reports. Before proposing a change,
 
 ## License
 
-[MIT](LICENSE) © Kumar Saurabh
+[Apache License 2.0](LICENSE) © Kumar Saurabh
 
