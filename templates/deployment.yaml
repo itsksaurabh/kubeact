@@ -16,8 +16,15 @@ spec:
     spec:
       containers:
       - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.username }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+        image: "{{ .Values.image.registry }}/{{ .Values.image.username }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: GITHUB_ACCESS_TOKEN
+          value: {{ .Values.github.access_token }}
+        - name: GITHUB_USERNAME
+          value: {{ .Values.github.username }}
+        - name: GITHUB_REPO_NAME
+          value: {{ .Values.github.repo_name }}
         
       imagePullSecrets:
-        - name: {{ .Values.image.name }}-pull-secret
+        - name: {{ .Values.image.secret }}
