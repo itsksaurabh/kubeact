@@ -7,10 +7,4 @@ set -Eeuo pipefail
 id -u kubeactuser &>/dev/null || adduser --disabled-password --gecos "" kubeactuser
 
 # give permission to user to access /root
-setfacl -Rm u:kubeactuser:rwx /kubeact
-# add the execute permission
-chmod +x ./config.sh
-
-# run script.sh with non-root user
-su kubeactuser ./config.sh
-
+#setfacl -Rm u:kubeactuser:rwx /kubeact
