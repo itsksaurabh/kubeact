@@ -13,4 +13,4 @@ REGISTRATION_TOKEN=$(echo $temp | grep "token" | awk '{print $3}'| awk -F , '{pr
 ./config.sh --url https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME} --token $REGISTRATION_TOKEN <<< $'\n\n'
 
 
-./actions-runner/run.sh
+./run.sh

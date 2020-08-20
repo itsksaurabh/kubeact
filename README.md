@@ -71,7 +71,9 @@ Open [values.yaml](values.yaml) and update the following values :
 Run the following command to install the chart to your kubernetes cluster:
 
 ```sh
-$ helm install kubeact --set github.access_token=<TOKEN> --set github.username=<USERNAME> --set github.repo_name=<REPO_NAME>.
+$ helm install --name kubeact kubeact --set github.access_token=<TOKEN> --set github.username=<USERNAME> --set github.repo_name=<REPO_NAME> --set image.username=<DOCKER_HUB_USERNAME>
+#In case of private registry, we need to create a kubernetes secret and pass its name as  --set image.secret=<PRIVATE_REGISTRY_SECRET> and --set image.username=<PRIVATE_REGISTRY>
+
 ```
 > **Note**: You can also update the values using --set flag.
 

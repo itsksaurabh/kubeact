@@ -7,4 +7,4 @@ set -Eeuo pipefail
 id -u kubeactuser &>/dev/null || adduser --disabled-password --gecos "" kubeactuser
 
 # give permission to user to access /root
-#setfacl -Rm u:kubeactuser:rwx /kubeact
+setfacl -Rm u:kubeactuser:rwx /kubeact/*
