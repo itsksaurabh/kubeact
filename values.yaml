@@ -5,12 +5,18 @@
 replicaCount: 1
 
 image:
-  # defult registry server for Docker Hub
+  # default registry server for Docker Hub
   registry: "https://index.docker.io/v1/"
   name: kubeact
   tag: latest
   username: 
   password: 
   pullPolicy: IfNotPresent
+
+github:
+  #These variables need to be set in ci/cd environment
+  access_token: ${GITHUB_ACCESS_TOKEN}
+  username: ${GITHUB_USERNAME}
+  repo_name: ${GITHUB_REPO_NAME}
 
 

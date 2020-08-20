@@ -42,10 +42,7 @@ Run the following command to build your own runner image:
 
 ```sh
 $ docker build \
-  -t yourUserName/kubeact:tagname \
-  --build-arg GITHUB_ACCESS_TOKEN=XXXXXXXXXXXXXX \
-  --build-arg GITHUB_USERNAME=< Your Github Username > \
-  --build-arg GITHUB_REPO_NAME=< Your target Github repo name >  .
+  -t yourUserName/kubeact:tagname  .
 ```
 
 Push the image into your registry:
@@ -74,7 +71,7 @@ Open [values.yaml](values.yaml) and update the following values :
 Run the following command to install the chart to your kubernetes cluster:
 
 ```sh
-$ helm install kubeact .
+$ helm install kubeact --set github.access_token=<TOKEN> --set github.username=<USERNAME> --set github.repo_name=<REPO_NAME>.
 ```
 > **Note**: You can also update the values using --set flag.
 
