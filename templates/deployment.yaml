@@ -21,3 +21,20 @@ spec:
         
       imagePullSecrets:
         - name: {{ .Values.image.name }}-pull-secret
+
+      - name: dind
+        image: docker:18.09-dind
+        resources:
+          limits:
+            cpu: 750m
+            memory: 512Mi
+          requests:
+            cpu: 250m
+            memory: 512Mi
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: dind-storage
+          mountPath: /var/lib/docker
+        - name: runner-work
+          mountPath: {{ .Values.runner.mountpath }}
